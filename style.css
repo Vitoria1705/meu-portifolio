@@ -449,3 +449,16 @@ footer .line-footer p a{
     }
 }
 
+@media (max-width: 1020px) {
+    .overlay{
+        opacity: 1 !important;
+    }
+
+    .img-port{
+        background-position: center !important;
+        transition: none !important;
+    }
+}
+
+
+
