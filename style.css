@@ -291,7 +291,7 @@ section.portfolio .flex{
     transition: .5s;
 }
 
-.overlay:hover{
+.img-port:hover .overlay {
     opacity: 1;
 }
 
@@ -448,3 +448,4 @@ footer .line-footer p a{
         text-align: center;
     }
 }
+
