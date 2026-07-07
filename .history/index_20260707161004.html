@@ -4,6 +4,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- SEO BÁSICO -->
+  <title>Vitória Escorcio | Desenvolvimento Web & UX Design</title>
+  <meta name="description" content="Desenvolvedora web e UX Designer. Crio sites modernos, responsivos e funcionais que unem design, tecnologia e propósito.">
+  <meta name="keywords" content="desenvolvimento web, UX design, front-end, sites responsivos, São Luís MA, Vitória Escorcio">
+  <meta name="author" content="Vitória Escorcio">
+
+  <!-- OPEN GRAPH (compartilhamento em redes sociais) -->
+  <meta property="og:title" content="Vitória Escorcio | Desenvolvimento Web & UX Design">
+  <meta property="og:description" content="Construindo experiências digitais que unem design, tecnologia e propósito.">
+  <meta property="og:image" content="images/foto.jpeg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vitoria1705.github.io/">
+
   <!-- GOOGLE FONTS-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,11 +34,18 @@
   <!-- BOOTSTRAP ICONS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
+  <!-- GOOGLE ANALYTICS -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZFM96BX09X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZFM96BX09X');
+  </script>
+
   <link rel="stylesheet" href="style.css">
 
   <script src="menu.js" defer></script>
-
-  <title>Agência VE</title>
 </head>
 
 <body>
@@ -30,7 +53,7 @@
   <header>
     <div class="interface">
       <div class="logo">
-        <a href="#">
+        <a href="#inicio">
           <img src="images/logoVE.png" alt="Logo Vitória Escorcio" width="120" style="border-radius: 15px;">
         </a>
       </div><!--logo-->
@@ -42,7 +65,6 @@
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#projetos">Projetos</a></li>
         </ul>
-
       </nav>
 
       <div class="btn-contato">
@@ -75,6 +97,7 @@
 
     </div><!--interface-->
   </header>
+
   <main>
     <section id="inicio" class="topo-do-site">
       <div class="interface">
@@ -90,8 +113,7 @@
           </div><!--txt-topo-do-site-->
 
           <div class="img-topo-site">
-            <img src="images/foto.jpeg" alt="foto" width="100"
-              style="width:250px; height:250px; object-fit:cover; border-radius:50%;">
+            <img src="images/foto.jpeg" alt="Vitória Escorcio sorrindo, foto de perfil" class="foto-hero">
           </div><!--img-topo-do-site-->
         </div><!--flex-->
       </div><!--interface-->
@@ -121,7 +143,6 @@
             <p>Organizo, analiso e interpreto dados para gerar insights e melhorar processos. Tenho experiência com
               bancos de dados, relatórios e ferramentas digitais, criando estruturas claras que facilitam a tomada de
               decisão.</p>
-
           </div><!--especialidades-box-->
         </div><!--flex-->
       </div><!--interface-->
@@ -131,12 +152,12 @@
       <div class="interface">
         <div class="flex">
           <div class="img-sobre">
-            <img src="images/foto.jpeg" alt="foto" class="" width="250" style="border-radius:15px;">
+            <img src="images/foto.jpeg" alt="Vitória Escorcio, desenvolvedora e UX Designer" class="foto-sobre">
           </div><!--img-sobre-->
 
           <div class="txt-sobre">
             <h2>MUITO PRAZER, <span>SOU VITÓRIA ESCORCIO.</span></h2>
-            <p>Sou estudante de Engenharia de Computação, atualmente no 4º período. Apaixonada por tecnologia e
+            <p>Sou estudante de Engenharia de Computação, atualmente no 6º período. Apaixonada por tecnologia e
               inovação, busco sempre aprender e aplicar meus conhecimentos em projetos que unem criatividade, lógica e
               resultados.</p>
             <p>Tenho facilidade em me comunicar, trabalhar em equipe e buscar soluções práticas para desafios reais. Meu
@@ -145,25 +166,22 @@
 
             <div class="btn-social">
               <!-- Instagram -->
-              <a href="https://www.instagram.com/vitoria_escorcio" target="_blank">
+              <a href="https://www.instagram.com/fernanescor?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
                 <button><i class="bi bi-instagram"></i></button>
               </a>
 
               <!-- WhatsApp -->
-              <a href="https://wa.me/98984838902" target="_blank">
+              <a href="https://wa.me/98984838902" target="_blank" aria-label="WhatsApp">
                 <button><i class="bi bi-whatsapp"></i></button>
               </a>
 
               <!-- LinkedIn -->
-              <a href="https://www.linkedin.com/in/vit%C3%B3ria-escorcio-82a314301" target="_blank">
+              <a href="https://www.linkedin.com/in/vit%C3%B3ria-escorcio-82a314301" target="_blank" aria-label="LinkedIn">
                 <button><i class="bi bi-linkedin"></i></button>
               </a>
             </div>
-
-
-          </div><!--btn-social-->
-        </div><!--txt-sobre-->
-      </div><!--flex-->
+          </div><!--txt-sobre-->
+        </div><!--flex-->
       </div><!--interface-->
     </section><!--sobre-->
 
@@ -173,22 +191,29 @@
         <div class="portfolio-grid">
 
           <div class="projeto-card">
-            <div class="projeto-img" style="background-image: url(images/projeto1.jpeg);"></div>
+            <div class="projeto-img" style="background-image: url(images/projeto1.jpeg);" role="img" aria-label="Tela inicial do site InfoTEA"></div>
             <div class="projeto-info">
               <h3>InfoTEA</h3>
-              <p>Plataforma de informação e acolhimento sobre autismo, com biblioteca, rede de apoio e assistente IA.</p>
+              <p>Portal de acolhimento sobre autismo para pais e profissionais. Reuni biblioteca de conteúdo, rede
+                de apoio local, quiz interativo e um chatbot próprio (TIA) para tirar dúvidas rápidas — tudo em uma
+                interface acessível e acolhedora.</p>
               <div class="projeto-tags">
-                <span>HTML</span><span>CSS</span><span>JS</span>
+                <span>HTML</span><span>CSS</span><span>JS</span><span>Bootstrap 5</span>
               </div>
-              <a href="https://vitoria1705.github.io/InfoTEA/" target="_blank" class="btn-ver-projeto">Ver projeto</a>
+              <div class="projeto-links">
+                <a href="https://vitoria1705.github.io/InfoTEA/" target="_blank" class="btn-ver-projeto">Ver projeto</a>
+                <!-- Substitua pelo link real do repositório -->
+                <a href="#" target="_blank" class="btn-secundario">Código</a>
+              </div>
             </div>
           </div>
 
           <div class="projeto-card">
-            <div class="projeto-img" style="background-image: url(images/projeto2.jpeg);"></div>
+            <div class="projeto-img" style="background-image: url(images/projeto2.jpeg);" role="img" aria-label="Área do aluno da plataforma Fonte de Riqueza"></div>
             <div class="projeto-info">
               <h3>Fonte de Riqueza</h3>
-              <p>Área do aluno com acesso a certificado de conclusão de curso.</p>
+              <p>Área do aluno para uma plataforma de cursos, permitindo acesso rápido e organizado ao certificado
+                de conclusão, reduzindo solicitações manuais de suporte.</p>
               <div class="projeto-tags">
                 <span>HTML</span><span>CSS</span><span>JS</span>
               </div>
@@ -196,37 +221,47 @@
           </div>
 
           <div class="projeto-card">
-            <div class="projeto-img" style="background-image: url(images/projeto3.png);"></div>
+            <div class="projeto-img" style="background-image: url(images/projeto3.png);" role="img" aria-label="Tela inicial da plataforma LudoPet"></div>
             <div class="projeto-info">
               <h3>LudoPet</h3>
-              <p>Plataforma de adoção de animais, com busca de pets perdidos e cadastro de adoção.</p>
+              <p>Plataforma de adoção de pets para São Luís (MA), com busca de animais perdidos, fórum da
+                comunidade e rede de clínicas parceiras filtrada por bairro. Projeto acadêmico em equipe usando
+                Spring Boot + Thymeleaf.</p>
               <div class="projeto-tags">
-                <span>HTML</span><span>CSS</span><span>JS</span>
+                <span>HTML</span><span>CSS</span><span>JS</span><span>Spring Boot</span>
               </div>
             </div>
           </div>
 
           <div class="projeto-card">
-            <div class="projeto-img" style="background-image: url(images/projeto4.png);"></div>
+            <div class="projeto-img" style="background-image: url(images/projeto5.png);" role="img" aria-label="Site institucional Casa da Beleza"></div>
             <div class="projeto-info">
               <h3>Casa da Beleza</h3>
-              <p>Site institucional para salão de beleza, com vitrine de serviços e agendamento de horário.</p>
+              <p>Site institucional para salão de beleza com galeria de antes/depois e botões de WhatsApp com
+                mensagem pré-preenchida, facilitando o agendamento direto pela cliente sem passar por formulário.</p>
               <div class="projeto-tags">
                 <span>HTML</span><span>CSS</span><span>JS</span>
               </div>
-              <a href="https://vitoria1705.github.io/salao-casa-da-beleza/" target="_blank" class="btn-ver-projeto">Ver projeto</a>
+              <div class="projeto-links">
+                <a href="https://vitoria1705.github.io/salao-casa-da-beleza/" target="_blank" class="btn-ver-projeto">Ver projeto</a>
+                <a href="#" target="_blank" class="btn-secundario">Código</a>
+              </div>
             </div>
           </div>
 
           <div class="projeto-card">
-            <div class="projeto-img" style="background-image: url(images/projeto5.png);"></div>
+            <div class="projeto-img" style="background-image: url(images/projeto4.png);" role="img" aria-label="Landing page Curuja Estética Automotiva"></div>
             <div class="projeto-info">
               <h3>Curuja Estética Automotiva</h3>
-              <p>Landing page para estética automotiva, com galeria de antes &amp; depois e agendamento online.</p>
+              <p>Landing page para estética automotiva com galeria de antes &amp; depois e agendamento online,
+                pensada para converter visitantes em horários marcados direto pelo site.</p>
               <div class="projeto-tags">
                 <span>HTML</span><span>CSS</span><span>JS</span>
               </div>
-              <a href="https://coruja-est-tica-auto-spa.vercel.app/" target="_blank" class="btn-ver-projeto">Ver projeto</a>
+              <div class="projeto-links">
+                <a href="https://coruja-est-tica-auto-spa.vercel.app/" target="_blank" class="btn-ver-projeto">Ver projeto</a>
+                <a href="#" target="_blank" class="btn-secundario">Código</a>
+              </div>
             </div>
           </div>
 
@@ -234,32 +269,50 @@
       </div><!--interface-->
     </section><!--portfolio-->
 
-
     <section id="contato" class="formulario">
       <div class="interface">
         <h2 class="titulo">FALA <span>COMIGO.</span></h2>
-       <form action="https://formsubmit.co/escorcio545@gmail.com" method="POST">
+        <form id="form-contato">
 
-    <input type="text" name="nome" placeholder="Seu nome completo:" required>
-    <input type="email" name="email" placeholder="Seu e-mail:" required>
-    <input type="text" name="celular" placeholder="Seu celular:">
-    <textarea name="mensagem" placeholder="Sua mensagem:" required></textarea>
+          <input type="text" name="nome" id="campo-nome" placeholder="Seu nome completo:" required>
+          <input type="email" name="email" id="campo-email" placeholder="Seu e-mail:" required>
+          <input type="text" name="celular" id="campo-celular" placeholder="Seu celular:">
+          <textarea name="mensagem" id="campo-mensagem" placeholder="Sua mensagem:" required></textarea>
 
-    <!-- Redirecionar após o envio -->
-    <input type="hidden" name="_next" value="sucesso.html">
+          <div class="btn-enviar">
+            <input type="submit" value="ENVIAR">
+          </div>
+        </form>
+        <script>
+          document.getElementById('form-contato').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-    <!-- Evita spam -->
-    <input type="hidden" name="_captcha" value="false">
+            const nome = document.getElementById('campo-nome').value;
+            const email = document.getElementById('campo-email').value;
+            const celular = document.getElementById('campo-celular').value;
+            const mensagem = document.getElementById('campo-mensagem').value;
 
-    <div class="btn-enviar">
-        <input type="submit" value="ENVIAR">
-    </div>
-</form>
+            const texto =
+              `Olá, meu nome é ${nome}.%0A` +
+              `E-mail: ${email}%0A` +
+              (celular ? `Celular: ${celular}%0A` : '') +
+              `Mensagem: ${mensagem}`;
 
+            // Substitua pelo seu número no formato: código do país + DDD + número (sem espaços/símbolos)
+            const numeroWhatsapp = '5598984838902';
+
+            window.open(`https://wa.me/${numeroWhatsapp}?text=${texto}`, '_blank');
+          });
+        </script>
       </div><!--interface-->
     </section><!--formulario-->
 
   </main>
+
+  <!-- BOTÃO FLUTUANTE DE WHATSAPP -->
+  <a href="https://wa.me/98984838902" target="_blank" class="whatsapp-float" aria-label="Falar no WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
 
   <footer>
     <div class="interface">
@@ -269,18 +322,13 @@
             <img src="images/logoVE.png" width="120" alt="Logo Vitória Escorcio" style="border-radius: 15px;">
           </div><!--logo-footer-->
           <div class="btn-social">
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/vitoria_escorcio" target="_blank">
+            <a href="https://www.instagram.com/fernanescor?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
               <button><i class="bi bi-instagram"></i></button>
             </a>
-
-            <!-- WhatsApp -->
-            <a href="https://wa.me/98984838902" target="_blank">
+            <a href="https://wa.me/98984838902" target="_blank" aria-label="WhatsApp">
               <button><i class="bi bi-whatsapp"></i></button>
             </a>
-
-            <!-- LinkedIn -->
-            <a href="https://www.linkedin.com/in/vit%C3%B3ria-escorcio-82a314301" target="_blank">
+            <a href="https://www.linkedin.com/in/vit%C3%B3ria-escorcio-82a314301" target="_blank" aria-label="LinkedIn">
               <button><i class="bi bi-linkedin"></i></button>
             </a>
           </div><!--btn-social-->
@@ -294,5 +342,4 @@
   </footer>
 
 </body>
-
 </html>

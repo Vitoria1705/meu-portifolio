@@ -5,15 +5,17 @@
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
 }
- 
+
 html{
     scroll-behavior: smooth;
 }
 
 body{
     background-color: black;
-    height: 100vh;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
+
 .interface{
     max-width: 1280px;
     margin: 0 auto;
@@ -58,14 +60,17 @@ header> .interface{
     justify-content: space-between;
 }
 
-header a {
+header a,
+header a:visited,
+header a:focus{
     color: #7d7d7d;
     text-decoration: none;
     display: inline-block;
     transition: .2s;
 }
 
-header nav .menu-desktop a:hover{
+header nav.menu-desktop a:hover,
+header nav.menu-desktop a:focus{
     color: #fff;
     transform: scale(1.05);
 }
@@ -101,7 +106,6 @@ header nav.menu-desktop ul li {
     width: 70%;
 }
 
-/* CORREÇÃO DO NOME */
 .menu-mobile .btn-fechar{
     padding: 20px 5%;
 }
@@ -142,6 +146,7 @@ header nav.menu-desktop ul li {
 /* ESTILO DO TOPO DO SITE */
 section.topo-do-site{
     padding: 40px;
+    overflow: hidden;
 }
 
 section.topo-do-site .flex{
@@ -153,7 +158,7 @@ section.topo-do-site .flex{
 .topo-do-site h1{
     color: #fff;
     font-size: 42px;
-    line-height: 40px;
+    line-height: 1.15;
 }
 
 .topo-do-site .txt-topo-site h1 span{
@@ -165,14 +170,23 @@ section.topo-do-site .flex{
     margin: 40px 0;
 }
 
-.topo-do-site .img-topo-site img{
+/* FOTO DO TOPO (hero) - tratamento novo, formato retangular vertical, sem zoom apertado no rosto */
+.foto-hero{
+    width: 210px;
+    height: 270px;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 24px;
+    border: 3px solid #ce24a3f6;
+    box-shadow: 0 0 30px #ce24a34d;
+    display: block;
     position: relative;
-    animation: flutuar 2s ease-in-out infinite alternate;
+    animation: flutuar 3s ease-in-out infinite alternate;
 }
 
 @keyframes flutuar{
-    0%{ top: 0; }
-    100%{ top: 30px; }
+    0%{ transform: translateY(0); }
+    100%{ transform: translateY(20px); }
 }
 
 /* Estilo das Especialidades */
@@ -196,7 +210,7 @@ section.especialidades .flex{
 }
 
 .especialidades .especialidades-box i{
-    font-size: 70px;    
+    font-size: 70px;
     color: #ce24a3f6;
 }
 
@@ -215,13 +229,25 @@ section.sobre .flex{
     gap: 60px;
 }
 
+/* FOTO DA SEÇÃO SOBRE - cantos arredondados, mesmo tratamento retangular do hero */
+.foto-sobre{
+    width: 230px;
+    height: 290px;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 20px;
+    border: 3px solid #ce24a3f6;
+    box-shadow: 0 0 25px #ce24a34d;
+    display: block;
+}
+
 .sobre .txt-sobre{
     color: #fff;
 }
 
 .sobre .txt-sobre h2{
     font-size: 40px;
-    line-height: 40px;
+    line-height: 1.15;
     margin-bottom: 30px;
 }
 
@@ -255,7 +281,7 @@ section.portfolio{
 
 .portfolio-grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
     margin-top: 60px;
 }
@@ -264,8 +290,15 @@ section.portfolio{
     background-color: #141414;
     border-radius: 16px;
     overflow: hidden;
-    transition: .3s;
+    transition: transform .3s, box-shadow .3s, opacity .8s, transform .8s;
     border: 1px solid #2a2a2a;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.projeto-card.reveal{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .projeto-card:hover{
@@ -315,6 +348,13 @@ section.portfolio{
     border-radius: 20px;
 }
 
+.projeto-links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
 .btn-ver-projeto{
     display: inline-block;
     background-color: #ce24a3f6;
@@ -329,6 +369,32 @@ section.portfolio{
 
 .btn-ver-projeto:hover{
     box-shadow: 0px 0px 8px #ce24a3f6;
+    transform: scale(1.05);
+}
+
+.btn-ver-projeto.disabled{
+    display: inline-block;
+    opacity: 0.6;
+    pointer-events: none;
+    background-color: #6b6b6b;
+    color: #fff;
+}
+
+.btn-secundario{
+    display: inline-block;
+    background-color: transparent;
+    color: #ce24a3f6;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 9px 20px;
+    border-radius: 30px;
+    border: 1px solid #ce24a3f6;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.btn-secundario:hover{
+    background-color: #ce24a31a;
     transform: scale(1.05);
 }
 
@@ -377,6 +443,32 @@ form .btn-enviar input{
     transition: .2s;
 }
 
+/* BOTÃO FLUTUANTE DE WHATSAPP */
+.whatsapp-float{
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background-color: #ce24a3f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 28px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,.4);
+    z-index: 9000;
+    transition: .2s;
+}
+
+.whatsapp-float:hover{
+    transform: scale(1.1);
+    color: #fff;
+    box-shadow: 0 0 20px #ce24a3f6;
+}
+
 /* ESTILO DO RODAPÉ */
 footer{
     padding: 60px 4%;
@@ -412,7 +504,7 @@ footer .line-footer p a{
     }
     h2.titulo{
         font-size: 30px;
-        line-height: 30px;
+        line-height: 1.15;
     }
 
     /* CABEÇALHO */
@@ -433,8 +525,10 @@ footer .line-footer p a{
         font-size: 30px;
     }
 
-    .topo-do-site .img-topo-site img{
-        width: 100%;
+    .foto-hero{
+        width: 170px;
+        height: 220px;
+        margin: 0 auto;
     }
 
     /* ESPECIALIDADES */
@@ -449,7 +543,7 @@ footer .line-footer p a{
 
     .sobre .txt-sobre h2 {
         font-size: 34px;
-        line-height: 35px;
+        line-height: 1.1;
         text-align: center;
     }
 
@@ -457,8 +551,10 @@ footer .line-footer p a{
         text-align: center;
     }
 
-    .img-sobre img{
-        width: 100%;
+    .foto-sobre{
+        width: 190px;
+        height: 240px;
+        margin: 0 auto;
     }
 
     /* PORTFÓLIO */
@@ -471,6 +567,15 @@ footer .line-footer p a{
         gap: 30px;
     }
 
+    /* BOTÃO WHATSAPP FLUTUANTE EM TELAS PEQUENAS */
+    .whatsapp-float{
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+        bottom: 16px;
+        right: 16px;
+    }
+
     /* RODAPÉ */
     footer .flex{
         flex-direction: column;
@@ -480,4 +585,3 @@ footer .line-footer p a{
         text-align: center;
     }
 }
-
